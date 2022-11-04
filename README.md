@@ -2,6 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+https://pro.codely.com/library/gestion-estado-en-react-171307/371675/path/step/144804463/
+
+https://www.youtube.com/watch?v=lATafp15HWA&t=1963s&ab_channel=WebDevSimplified
+
+https://github.com/WebDevSimplified/react-ts-shopping-cart
+
 ## Available Scripts
 
 In the project directory, you can run:
