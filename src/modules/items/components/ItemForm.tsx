@@ -4,7 +4,7 @@ export default function ItemForm() {
   const [input, setInput] = useState({
     title: '',
     price: '',
-    category: '',
+    category: [{}],
   });
 
   const handleInputChange = function (e: React.ChangeEvent<HTMLInputElement>) {
@@ -14,15 +14,15 @@ export default function ItemForm() {
     });
   };
 
-  // const handleChangeOptions = (e: EventListenerOptions) => {
-  //   let value = Array.from(e.target.selectedOptions, (option) => {
-  //     return { id: option.id, name: option.value };
-  //   });
-  //   setInput({
-  //     ...input,
-  //     category: value,
-  //   });
-  // };
+  const handleChangeOptions = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    let value = Array.from(e.target.selectedOptions, (option) => {
+      return { id: option.id, name: option.value };
+    });
+    setInput({
+      ...input,
+      category: value,
+    });
+  };
 
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -71,7 +71,7 @@ export default function ItemForm() {
           <label form="type">
             <strong>Que Categoria? </strong>
           </label>
-          {/* <select
+          <select
             id="category"
             name="category"
             multiple
@@ -84,7 +84,7 @@ export default function ItemForm() {
                 </option>
               );
             })}
-          </select> */}
+          </select>
           <input type="submit" />
         </div>
       </form>
