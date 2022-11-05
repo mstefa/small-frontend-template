@@ -1,7 +1,9 @@
 import { Button, Card } from 'react-bootstrap';
-import { ItemType } from '../types/ItemTypes';
+import { useCart } from '../hooks/useCart';
+import { ItemCartDetailsType } from '../types/CartTypes';
 
-export function Item(item: ItemType) {
+export function CartItem(item: ItemCartDetailsType) {
+  const { increaseQuantity } = useCart();
   return (
     <Card className="h-100">
       <Card.Img
@@ -26,8 +28,18 @@ export function Item(item: ItemType) {
               className="d-flex align-items-center justify-content-center"
               style={{ gap: '.5rem' }}
             ></div>
-            <Button variant="success" size="sm">
-              add to Cart
+            <div
+              className="d-flex align-items-center justify-content-center"
+              style={{ gap: '.5rem' }}
+            >
+              {item.quantity}
+            </div>
+            <Button
+              variant="danger"
+              size="sm"
+              onClick={() => increaseQuantity(item.id)}
+            >
+              Add one
             </Button>
           </div>
         </div>

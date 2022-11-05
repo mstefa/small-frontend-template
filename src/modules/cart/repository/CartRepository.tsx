@@ -1,12 +1,19 @@
-import { CartRequestType } from '../types/CartTypes';
+import { CartType } from '../types/CartTypes';
 
-async function retrieveCart(): Promise<CartRequestType[]> {
+async function retrieveCart(): Promise<CartType[]> {
   return fetch(`https://fakestoreapi.com/carts/user/2`)
     .then((response) => response.json())
     .then((json) => {
-      console.error(json);
-      return json as CartRequestType[];
+      return json as CartType[];
     });
 }
 
-export { retrieveCart };
+async function updateCart(cart: any): Promise<CartType[]> {
+  debugger;
+  return fetch('https://fakestoreapi.com/carts/3', {
+    method: 'PUT',
+    body: JSON.stringify(cart),
+  }).then((res) => res.json());
+}
+
+export { retrieveCart, updateCart };

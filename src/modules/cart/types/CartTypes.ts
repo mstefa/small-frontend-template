@@ -1,20 +1,21 @@
-import { ItemType } from "../../items/types/ItemTypes"
-
 export type CartType = {
   id: string
   userId: string
   date: Date
-  products: ItemType[]
+  products: ItemCartType[]
 }
 
-export type CartRequestType = {
-  id: string
-  userId: string
-  date: Date
-  products: ItemCartRequestType[]
-}
-
-export type ItemCartRequestType = {
+export type ItemCartType = {
   productId: string
+  quantity: number
+}
+
+export type ItemCartDetailsType = {
+  id: string
+  title: string
+  price: number
+  category: string
+  description: string
+  imgUrl: string
   quantity: number
 }
