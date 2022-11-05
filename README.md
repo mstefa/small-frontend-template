@@ -8,6 +8,8 @@ https://www.youtube.com/watch?v=lATafp15HWA&t=1963s&ab_channel=WebDevSimplified
 
 https://github.com/WebDevSimplified/react-ts-shopping-cart
 
+API: https://fakestoreapi.com/docs
+
 ## Available Scripts
 
 In the project directory, you can run:

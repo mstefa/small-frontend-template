@@ -8,14 +8,8 @@ export function Store() {
   return (
     <Row md={2} xs={1} lg={3} className="g-3">
       {items.map((item) => (
-        <Col>
-          <Item
-            key={item.id}
-            id={item.id}
-            name={item.title}
-            price={item.price}
-            imgUrl={item.imgUrl}
-          />
+        <Col key={item.id}>
+          <Item {...item} />
         </Col>
       ))}
     </Row>

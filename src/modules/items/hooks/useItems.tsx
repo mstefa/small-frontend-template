@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { retrieveItems } from '../repository/ItemRepository';
-import { Item } from '../types/ItemTypes';
+import { ItemType } from '../types/ItemTypes';
 
 export const useItems = () => {
-  const [items, setItems] = useState([] as Item[]);
+  const [items, setItems] = useState([] as ItemType[]);
 
   useEffect(() => {
     retrieveItems()

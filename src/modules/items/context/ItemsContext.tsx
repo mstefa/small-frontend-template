@@ -1,9 +1,9 @@
 import { createContext, ReactNode, useContext } from 'react';
 import { useItems } from '../hooks/useItems';
-import { Item } from '../types/ItemTypes';
+import { ItemType } from '../types/ItemTypes';
 
 type ItemsContextType = {
-  items: Item[];
+  items: ItemType[];
 };
 
 type ItemsProviderProps = {
