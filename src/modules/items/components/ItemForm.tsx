@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
 
 export default function ItemForm() {
   const [input, setInput] = useState({
@@ -45,49 +47,48 @@ export default function ItemForm() {
   ];
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <p>
-            <strong>Cual es el nombre de tu Producto?</strong>
-          </p>
-          <input
-            type="text"
-            name="title"
-            onChange={handleInputChange}
-            value={input.title}
-          ></input>
-          <p>
-            <strong>Tienes una imagen de él?</strong>
-          </p>
-          <input
-            type="number"
-            name="price"
-            onChange={handleInputChange}
-            value={input.price}
-          ></input>
-        </div>
-        <div>
-          <label form="type">
-            <strong>Que Categoria? </strong>
-          </label>
-          <select
-            id="category"
-            name="category"
-            multiple
-            onChange={handleChangeOptions}
-          >
-            {category.map((e) => {
-              return (
-                <option id={e.id} value={e.name}>
-                  {e.name}
-                </option>
-              );
-            })}
-          </select>
-          <input type="submit" />
-        </div>
-      </form>
-    </div>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3" controlId="title">
+        <Form.Label>Cual es el nombre de tu Producto?</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="Product Title"
+          name="title"
+          onChange={handleInputChange}
+          value={input.title}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="price">
+        <Form.Label>Price</Form.Label>
+        <Form.Control
+          type="number"
+          name="price"
+          onChange={handleInputChange}
+          value={input.price}
+        />
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="category">
+        <Form.Label>Category</Form.Label>
+        <Form.Select
+          aria-label="Default select example"
+          id="category"
+          name="category"
+          // multiple
+          onChange={handleChangeOptions}
+        >
+          {category.map((e) => {
+            return (
+              <option id={e.id} value={e.name}>
+                {e.name}
+              </option>
+            );
+          })}
+        </Form.Select>
+      </Form.Group>
+      <Button variant="primary" type="submit">
+        {' '}
+        Submit
+      </Button>
+    </Form>
   );
 }
