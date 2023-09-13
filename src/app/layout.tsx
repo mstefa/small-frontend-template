@@ -1,7 +1,8 @@
 import { Providers } from './providers';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const metadata = {
-  title: 'mstefa',
+  title: 'mstefanutti',
   description: 'Matias Stefanutti personal web site',
   icons: {
     icon: './favicon.ico',

@@ -1,24 +1,17 @@
-import { Button, Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-// import { useShoppingCart } from "../context/ShoppingCartContext"
+'use client'; // TODO
+
+import Link from 'next/link';
+import { Container, Nav, Navbar as NavbarBs } from 'react-bootstrap';
 
 export function Navbar() {
   return (
     <NavbarBs sticky="top" className="bg-white shadow-sm mb-3">
       <Container>
         <Nav className="me-auto">
-          <Nav.Link to="/" as={NavLink}>
-            Home
-          </Nav.Link>
-          <Nav.Link to="/store" as={NavLink}>
-            Store
-          </Nav.Link>
-          <Nav.Link to="/cart" as={NavLink}>
-            Cart
-          </Nav.Link>
-          <Nav.Link to="/about" as={NavLink}>
-            About
-          </Nav.Link>
+          <Link href="/">Home</Link>
+          <Link href="/store">Store</Link>
+          <Link href="/cart">Cart</Link>
+          <Link href="/about-me">About</Link>
         </Nav>
       </Container>
     </NavbarBs>

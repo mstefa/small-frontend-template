@@ -1,3 +1,5 @@
+'use client';
+
 import { useItemsContext } from '../../items/context/ItemsContext';
 import { useCart } from '../hooks/useCart';
 import { ItemCartDetailsType } from '../types/CartTypes';
