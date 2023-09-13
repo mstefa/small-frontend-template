@@ -1,8 +1,10 @@
-import { Row, Col } from 'react-bootstrap';
-import { Item } from '../modules/items/components/Item';
-import { useItemsContext } from '../modules/items/context/ItemsContext';
+'use client';
 
-export function Store() {
+import { Row, Col } from 'react-bootstrap';
+import { Item } from '../../modules/items/components/Item';
+import { useItemsContext } from '../../modules/items/context/ItemsContext';
+
+export default function Store() {
   const { items } = useItemsContext();
 
   return (

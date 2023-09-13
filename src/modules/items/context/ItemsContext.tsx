@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, ReactNode, useContext } from 'react';
 import { useItems } from '../hooks/useItems';
 import { ItemType } from '../types/ItemTypes';

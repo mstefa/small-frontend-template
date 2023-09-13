@@ -9,7 +9,6 @@ async function retrieveCart(): Promise<CartType[]> {
 }
 
 async function updateCart(cart: any): Promise<CartType[]> {
-  debugger;
   return fetch('https://fakestoreapi.com/carts/3', {
     method: 'PUT',
     body: JSON.stringify(cart),

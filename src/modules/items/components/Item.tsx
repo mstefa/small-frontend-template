@@ -1,3 +1,5 @@
+'use client';
+
 import { Button, Card } from 'react-bootstrap';
 import { ItemType } from '../types/ItemTypes';
 
