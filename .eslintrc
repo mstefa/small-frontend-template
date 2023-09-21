@@ -1,4 +1,3 @@
-
 {
   "parser": "@babel/eslint-parser",
   "env": {
@@ -13,7 +12,14 @@
   //   "eslint:recommended"
   // ],
   "rules": {
-    "no-console": ["error", { "allow": ["error"] }],
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "error"
+        ]
+      }
+    ],
     "no-var": "error",
     // "object-shorthand": "error",
     // "prefer-const": "error",

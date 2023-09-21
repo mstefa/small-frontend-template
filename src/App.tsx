@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { NextUIProvider } from '@nextui-org/react';
 import { Container } from 'react-bootstrap';
 import { Home } from './pages/Home';
 import { Store } from './pages/Store';
@@ -10,18 +11,20 @@ import { FormPage } from './pages/FormPage';
 
 function App() {
   return (
-    <Container className="mb-4">
-      <Navbar />
-      <ItemsContextProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/store" element={<Store />} />
-          <Route path="/form" element={<FormPage />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </ItemsContextProvider>
-    </Container>
+    <NextUIProvider>
+      <Container className="mb-4">
+        <Navbar />
+        <ItemsContextProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/store" element={<Store />} />
+            <Route path="/form" element={<FormPage />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </ItemsContextProvider>
+      </Container>
+    </NextUIProvider>
   );
 }
 

@@ -1,38 +1,53 @@
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Link,
+  Divider,
+  Avatar,
+} from '@nextui-org/react';
+
 export function About() {
   return (
     <>
-      <h1>About</h1>
-      <div>
-        <h3>Matías Stefanutti</h3>
-        <div>
-          <img
-            src="https://mstefanutti-site.s3.us-east-2.amazonaws.com/CV2.jpeg"
-            alt="profile"
-            width="99em"
-            height="120em"
-            border-radius="99em"
-          ></img>
-        </div>
-        <div>
-          <a
-            href="https://www.linkedin.com/in/matiasstefanutti/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {/* <i className="fab fa-linkedin-in"></i> */}
-            Linkedin
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://github.com/mstefa"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {/* <i className="fab fa-github"></i> */}
-            GitHub
-          </a>
-        </div>
+      <div className="container flex justify-center">
+        <Card className="max-w-[600px] max-h-[400px]">
+          <CardHeader className="flex gap-3">
+            <Avatar
+              isBordered
+              radius="md"
+              showFallback
+              name="MS"
+              src="https://drive.google.com/uc?export=download&id=1X1x_1WzLmBElR2t4g7lCrDNJ2OUjeTRm"
+              classNames={{
+                img: 'opacity-100',
+              }}
+            />
+            <div className="flex flex-col">
+              <p className="text-md">Matias Stefanutti</p>
+            </div>
+          </CardHeader>
+          <Divider />
+          <CardBody className="max-h-[300px]">
+            <p>
+              I&apos;ve developed this web application and am eager to discuss
+              my approach, decisions, and potential enhancements in an upcoming
+              interview.
+            </p>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <Link
+              isExternal
+              showAnchorIcon
+              href="https://www.linkedin.com/in/matiasstefanutti/"
+              target="_blank"
+            >
+              Check my Linkedin profile
+            </Link>
+          </CardFooter>
+        </Card>
       </div>
     </>
   );

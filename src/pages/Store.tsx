@@ -6,12 +6,10 @@ export function Store() {
   const { items } = useItemsContext();
 
   return (
-    <Row md={2} xs={1} lg={3} className="g-3">
+    <div className="gap-2 grid grid-cols-2 sm:grid-cols-4">
       {items.map((item) => (
-        <Col key={item.id}>
-          <Item {...item} />
-        </Col>
+        <Item {...item} />
       ))}
-    </Row>
+    </div>
   );
 }
